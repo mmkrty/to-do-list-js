@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>To Do List</h1>
+    <form>
+    <label for="newItem">New Item</label>
+    <input type="text" id="newItem" name="newItem" value="">
+    <button type="button" onclick="addItem();">Add</button>
+    </form>
+
+    <div>
+        <ul id="toDoList-Items">
+
+        </ul>
+    </div>
+
+
+
+
+
+    <script>
+       
+        const toDoItems =  document.querySelector(".toDoList-Items");
+        
+
+        function addItem(){
+            var item = document.getElementById("newItem").value;
+            var ul = document.getElementById("toDoList-Items");
+            var li = document.createElement("li");
+            li.innerHTML = item+"<button type='button' class='remove' onclick='removeItem();'>x</button>";
+            ul.appendChild(li);
+        }
+
+        
+
+        function removeItem(){
+            var btn = document.querySelectorAll('.remove');
+            btn.forEach(element => element.addEventListener("click", function(e){
+                e.currentTarget.parentNode.remove(); 
+            }));
+        }
+
+    </script>
+
+
+</body>
+</html>
