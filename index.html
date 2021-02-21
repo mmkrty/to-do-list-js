@@ -28,7 +28,7 @@
     <script>
        
         const toDoItems =  document.querySelector(".toDoList-Items");
-        
+   
 
         function addItem(){
             var item = document.getElementById("newItem").value;
@@ -38,6 +38,9 @@
             ul.appendChild(li);
         }
 
+      
+
+        
         
 
         function removeItem(){
@@ -46,6 +49,10 @@
                 e.currentTarget.parentNode.remove(); 
             }));
         }
+
+
+    
+
 
     </script>
 
